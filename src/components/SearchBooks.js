@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import * as BooksAPI from '.././BooksAPI'
-import escapeRegExp from 'escape-string-regexp'
 import Book from './Book'
 
 class SearchBooks extends Component {
@@ -19,17 +18,17 @@ class SearchBooks extends Component {
   
   	render() {
 
-  		const { books } = this.props
-  		const { query } = this.state
-
-         /* Search function */
-        let searchBooks
-        if (query) {
-	   		BooksAPI.search(query).then((searchBooks) => {
-	      		this.setState({searchBooks})
+         /* Search function: Get books from API, then set the state for render the books
+         	if the books can not be rendered as a search query does not get results,
+         	clean up the state  */
+        if (this.state.query) {
+	   		BooksAPI.search(this.state.query).then((searchBooks) => {
+	   			if (searchBooks.error) {
+	      			this.setState({searchBooks:[]})
+	      		} else {
+	      			this.setState({searchBooks})
+	      		}
 	    	}) 
-        } else {
-            searchBooks = books;
         }
 
 	    return (
@@ -46,15 +45,13 @@ class SearchBooks extends Component {
 	          		</div>
 	        	</div>
 		        <div className="search-books-results">
-	                {this.state.query.length > 0 &&
-			         	<ol className="books-grid">
-	                       	{this.state.searchBooks.map(book => (
-	                            <li key={book.id} tabIndex="0">
-	                                <Book book={book} shelf={this.props.shelf} />
-	                            </li>
-	                        ))}
-			         	</ol>
-		         	}
+		         	<ol className="books-grid">
+                       	{this.state.searchBooks.map(book => (
+                            <li key={book.id} tabIndex="0">
+                                <Book book={book} shelf={this.props.shelf} />
+                            </li>
+                        ))}
+		         	</ol>
 		        </div>
 	      	</div>
 	    );
