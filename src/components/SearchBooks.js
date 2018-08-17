@@ -13,7 +13,7 @@ class SearchBooks extends Component {
 
 	/* Pass changes from the input field to the state */
 	updateQuery = (query) => {
-		this.setState({ query: query.trim() })
+		this.setState({ query: query })
 	}
   
   	render() {
@@ -56,7 +56,7 @@ class SearchBooks extends Component {
 			         	<ol className="books-grid">
 	                       	{searchBooks.map(book => (
 	                            <li key={book.id} tabIndex="0">
-	                                <Book book={book} />
+	                                <Book book={book} shelf={this.props.shelf} />
 	                            </li>
 	                        ))}
 			         	</ol>

@@ -47,6 +47,7 @@ Please note that the search will actually work only with these queries:
 - [ ] Switching from search to main page, all new added books should be visible at the shelf
 - [ ] Books can be added to a shelf
 - [ ] Invalid search queries are handled and prior search results are shown
+- [x] The user is able to search for multiple words, such as artificial intelligence
 
 ### Ressources
 
