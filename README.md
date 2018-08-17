@@ -28,19 +28,19 @@ Please note that the search will actually work only with these queries:
 - [x] Routing and Links from main to search page and vice cersa
 - [x] JSX is formatted correctly
 - [x] A README file is included detailing all steps required to successfully run the application.
-- [ ] Component state is passed down from parent components. The state variable is not modified directly - setState() function is used correctly
+- [x] Component state is passed down from parent components. The state variable is not modified directly - setState() function is used correctly
 
 **Bookshelf**
 
-- [ ] Cover, title and author are displayed
-- [ ] The main page contains three bookshelves: Want to Read, Currently Reading, Read
+- [x] Cover, title and author are displayed
+- [x] The main page contains three bookshelves: Want to Read, Currently Reading, Read
 - [ ] By refreshing the page, the books will stay at their current shelfes
 - [ ] Books can be moved between the shelves or completely deleted from any shelf
 
 **Search**
 
 - [ ] Search input takes queries. Each time a new letter is added, search will be performed on the fly
-- [ ] The search works correctly when there is no book cover (test: "biography")
+- [x] The search works correctly when there is no book cover (test: "biography")
 - [ ] Search shows no results if the text from the input field will be completely deleted
 - [ ] Books have got the same shelf on the search as on the main page
 - [ ] Search will grab results from the API

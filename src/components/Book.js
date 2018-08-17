@@ -4,7 +4,11 @@ class Book extends React.Component{
 
   	render() {
 
-    	let background = { backgroundImage: 'url(' + this.props.book.imageLinks.thumbnail + ')' };
+  		/* Fallback for books without a cover */
+	    let background = { backgroundColor: "#e3e3e3" };
+	    if ( typeof this.props.book.imageLinks.thumbnail !== 'undefined' ) {
+	      	background = { backgroundImage: 'url(' + this.props.book.imageLinks.thumbnail + ')' }
+	    }
 
     	return (
     		<div className="book">
