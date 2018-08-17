@@ -25,7 +25,7 @@ Please note that the search will actually work only with these queries:
 **General**
 
 - [x] Use React
-- [ ] Routing and Links from main to search page and vice cersa
+- [x] Routing and Links from main to search page and vice cersa
 - [x] JSX is formatted correctly
 - [x] A README file is included detailing all steps required to successfully run the application.
 - [ ] Component state is passed down from parent components. The state variable is not modified directly - setState() function is used correctly
@@ -51,3 +51,4 @@ Please note that the search will actually work only with these queries:
 ### Ressources
 
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
+* Starter Code from [Udacity](https://github.com/udacity/reactnd-project-myreads-starter)
