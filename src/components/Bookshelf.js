@@ -13,7 +13,7 @@ class Bookshelf extends React.Component{
 
                         {this.props.books.map(book => (
                             <li key={book.id} tabIndex="0">
-                                {book.title}
+                                <Book book={book} />
                             </li>
                         ))}
                 	</ol>
