@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import * as BooksAPI from '.././BooksAPI'
 import escapeRegExp from 'escape-string-regexp'
 import Book from './Book'
 
@@ -24,17 +25,10 @@ class SearchBooks extends Component {
          /* Search function */
         let searchBooks
         if (query) {
-
-	        /* TODO: Get the books from the API as searchBooks, not from the books staate 
-	   		BooksAPI.search(query, 10).then((books) => {
+	   		BooksAPI.search(query).then((searchBooks) => {
 	      		this.setState({searchBooks})
-	    	}) */
-
-            const match = new RegExp(escapeRegExp(query), 'i')
-            searchBooks = books.filter((book) => match.test(book.title))
-            
+	    	}) 
         } else {
-            /* Show all books in array */
             searchBooks = books;
         }
 
@@ -54,7 +48,7 @@ class SearchBooks extends Component {
 		        <div className="search-books-results">
 	                {this.state.query.length > 0 &&
 			         	<ol className="books-grid">
-	                       	{searchBooks.map(book => (
+	                       	{this.state.searchBooks.map(book => (
 	                            <li key={book.id} tabIndex="0">
 	                                <Book book={book} shelf={this.props.shelf} />
 	                            </li>
