@@ -45,13 +45,15 @@ class SearchBooks extends Component {
 	          		</div>
 	        	</div>
 		        <div className="search-books-results">
-		         	<ol className="books-grid">
-                       	{searchBooks.map(book => (
-                            <li key={book.id} tabIndex="0">
-                                <Book book={book} />
-                            </li>
-                        ))}
-		         	</ol>
+	                {this.state.query.length > 0 &&
+			         	<ol className="books-grid">
+	                       	{searchBooks.map(book => (
+	                            <li key={book.id} tabIndex="0">
+	                                <Book book={book} />
+	                            </li>
+	                        ))}
+			         	</ol>
+		         	}
 		        </div>
 	      	</div>
 	    );
