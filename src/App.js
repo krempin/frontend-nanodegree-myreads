@@ -1,13 +1,24 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-// import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Bookshelf from './components/Bookshelf'
 import SearchBooks from './components/SearchBooks'
 
 class BooksApp extends React.Component {
+
+  /* State array holding the books queried from API */
   state = {
+    books:[]
+  }
+
+  /* Get 8 starter books from the API */
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({books})
+      console.log('Api has loaded');
+    })
   }
 
   render() {
@@ -23,9 +34,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
 
-              <Bookshelf title="Currently Reading"/>
-              <Bookshelf title="Want to Read"/>
-              <Bookshelf title="Read"/>
+              <Bookshelf title="Currently Reading" books={this.state.books} />
+              <Bookshelf title="Want to Read" books={this.state.books}/>
+              <Bookshelf title="Read" books={this.state.books}/>
               
             </div>
             <div className="open-search">
