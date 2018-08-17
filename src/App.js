@@ -20,6 +20,15 @@ class BooksApp extends React.Component {
     })
   }
 
+  /* TO DO: Create move shelf function 
+  changeShelf = () => {
+
+    Update so that changed books stay on their shelves when page is refreshed
+    BooksAPI.update()
+
+  }
+  */
+
   render() {
     return (
       <div className="app">

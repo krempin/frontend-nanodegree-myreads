@@ -34,14 +34,14 @@ Please note that the search will actually work only with these queries:
 
 - [x] Cover, title and author are displayed
 - [x] The main page contains three bookshelves: Want to Read, Currently Reading, Read
-- [ ] By refreshing the page, the books will stay at their current shelfes
+- [ ] By refreshing the page, the books will stay at their current shelves
 - [ ] Books can be moved between the shelves or completely deleted from any shelf
 
 **Search**
 
-- [ ] Search input takes queries. Each time a new letter is added, search will be performed on the fly
+- [x] Search input takes queries. Each time a new letter is added, search will be performed on the fly
 - [x] The search works correctly when there is no book cover (test: "biography")
-- [ ] Search shows no results if the text from the input field will be completely deleted
+- [x] Search shows no results if the text from the input field will be completely deleted
 - [ ] Books have got the same shelf on the search as on the main page
 - [ ] Search will grab results from the API
 - [ ] Switching from search to main page, all new added books should be visible at the shelf

@@ -24,8 +24,15 @@ class SearchBooks extends Component {
          /* Search function */
         let searchBooks
         if (query) {
+
+	        /* TODO: Get the books from the API as searchBooks, not from the books staate 
+	   		BooksAPI.search(query, 10).then((books) => {
+	      		this.setState({searchBooks})
+	    	}) */
+
             const match = new RegExp(escapeRegExp(query), 'i')
             searchBooks = books.filter((book) => match.test(book.title))
+            
         } else {
             /* Show all books in array */
             searchBooks = books;
