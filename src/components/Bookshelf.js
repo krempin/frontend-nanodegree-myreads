@@ -10,8 +10,10 @@ class Bookshelf extends React.Component{
               	<h2 className="bookshelf-title">{this.props.title}</h2>
               	<div className="bookshelf-books">
                 	<ol className="books-grid">
-
-                        {this.props.books.map(book => (
+                        {/* First filter the books by shelf, then show each book one by one */}
+                        {this.props.books
+                        .filter(book => book.shelf === this.props.shelf)
+                        .map(book => (
                             <li key={book.id} tabIndex="0">
                                 <Book book={book} />
                             </li>
