@@ -43,7 +43,7 @@ Please note that the search will actually work only with these queries:
 - [x] The search works correctly when there is no book cover (test: "biography")
 - [x] Search shows no results if the text from the input field will be completely deleted
 - [ ] Books have got the same shelf on the search as on the main page
-- [ ] Search will grab results from the API
+- [x] Search will grab results from the API
 - [ ] Switching from search to main page, all new added books should be visible at the shelf
 - [ ] Books can be added to a shelf
 - [ ] Invalid search queries are handled and prior search results are shown
