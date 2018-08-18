@@ -44,8 +44,8 @@ Please note that the search will actually work only with these queries:
 - [x] Search shows no results if the text from the input field will be completely deleted
 - [ ] Books have got the same shelf on the search as on the main page
 - [x] Search will grab results from the API
-- [ ] Switching from search to main page, all new added books should be visible at the shelf
-- [ ] Books can be added to a shelf
+- [x] Switching from search to main page, all new added books should be visible at the shelf
+- [x] Books can be added to a shelf
 - [x] Invalid search queries are handled and prior search results are not shown
 - [x] The user is able to search for multiple words, such as artificial intelligence
 
