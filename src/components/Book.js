@@ -16,7 +16,7 @@ class Book extends React.Component{
                   <div className="book-cover" style={background}></div>
                     <div className="book-shelf-changer">
                         <select 
-                          value={this.props.shelf | 'none'}
+                          value={this.props.shelf}
                           onChange={(event) => this.props.changeShelf(
                             this.props.book, event.target.value
                           )}
