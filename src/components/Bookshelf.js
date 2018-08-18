@@ -3,26 +3,29 @@ import Book from './Book'
 
 class Bookshelf extends React.Component{ 
   
-  	render() {
+    render() {
 
-    	return (
+      return (
             <div className="bookshelf">
-              	<h2 className="bookshelf-title">{this.props.title}</h2>
-              	<div className="bookshelf-books">
-                	<ol className="books-grid">
+                <h2 className="bookshelf-title">{this.props.title}</h2>
+                <div className="bookshelf-books">
+                  <ol className="books-grid">
                         {/* First filter the books by shelf, then show each book one by one */}
                         {this.props.books
                         .filter(book => book.shelf === this.props.shelf)
                         .map(book => (
                             <li key={book.id} tabIndex="0">
-                                <Book book={book} />
+                                <Book 
+                                  book={book}
+                                  shelf={this.props.shelf}
+                                />
                             </li>
                         ))}
-                	</ol>
-              	</div>
+                  </ol>
+                </div>
             </div>
-    	)
-  	}
+      )
+    }
 
 }
 
