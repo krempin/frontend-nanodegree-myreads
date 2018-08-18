@@ -20,20 +20,15 @@ class BooksApp extends React.Component {
     })
   }
 
-  /* TO DO: Create move shelf function 
-  changeShelf = () => {
-
-    Update so that changed books stay on their shelves when page is refreshed
-    BooksAPI.update()
-
+  changeShelf = (book, shelf) => {
+    BooksAPI.update(book, shelf)
   }
-  */
 
   render() {
     return (
       <div className="app">
         <Route exact path='/search' render={() => (
-          <SearchBooks books={this.state.books} />
+          <SearchBooks books={this.state.books} changeShelf={this.changeShelf} />
         )}/>
         <Route exact path='/' render={() => (
           <div className="list-books">
@@ -42,9 +37,9 @@ class BooksApp extends React.Component {
             </div>
             <div className="list-books-content">
 
-              <Bookshelf title="Currently Reading" books={this.state.books} shelf="currentlyReading" />
-              <Bookshelf title="Want to Read" books={this.state.books} shelf="wantToRead" />
-              <Bookshelf title="Read" books={this.state.books} shelf="read" />
+              <Bookshelf title="Currently Reading" books={this.state.books} shelf="currentlyReading" changeShelf={this.changeShelf} />
+              <Bookshelf title="Want to Read" books={this.state.books} shelf="wantToRead" changeShelf={this.changeShelf} />
+              <Bookshelf title="Read" books={this.state.books} shelf="read" changeShelf={this.changeShelf} />
               
             </div>
             <div className="open-search">

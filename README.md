@@ -34,8 +34,8 @@ Please note that the search will actually work only with these queries:
 
 - [x] Cover, title and author are displayed
 - [x] The main page contains three bookshelves: Want to Read, Currently Reading, Read
-- [ ] By refreshing the page, the books will stay at their current shelves
-- [ ] Books can be moved between the shelves or completely deleted from any shelf
+- [x] By refreshing the page, the books will stay at their current shelves
+- [x] Books can be moved between the shelves or completely deleted from any shelf
 
 **Search**
 
@@ -46,10 +46,11 @@ Please note that the search will actually work only with these queries:
 - [x] Search will grab results from the API
 - [ ] Switching from search to main page, all new added books should be visible at the shelf
 - [ ] Books can be added to a shelf
-- [x] Invalid search queries are handled and prior search results are shown
+- [x] Invalid search queries are handled and prior search results are not shown
 - [x] The user is able to search for multiple words, such as artificial intelligence
 
 ### Ressources
 
 * This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
 * Starter Code from [Udacity](https://github.com/udacity/reactnd-project-myreads-starter)
+* Study Jam on [YouTube](https://www.youtube.com/watch?v=i6L2jLHV9j8)
