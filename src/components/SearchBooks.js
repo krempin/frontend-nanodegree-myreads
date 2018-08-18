@@ -18,6 +18,9 @@ class SearchBooks extends Component {
   
   	render() {
 
+  		/* Defines the shelf for all books not in shelves yet. Default value is 'none' */
+  		let shelf = 'none';
+
          /* Search function: Get books from API, then set the state for render the books
          	if the books can not be rendered as a search query does not get results,
          	clean up the state  */
@@ -46,15 +49,25 @@ class SearchBooks extends Component {
 	        	</div>
 		        <div className="search-books-results">
 		         	<ol className="books-grid">
-                       	{this.state.searchBooks.map(book => (
-                            <li key={book.id} tabIndex="0">
-                                <Book 
-                                	book={book}
-                                	shelf={this.props.shelf}
-                                	changeShelf={this.props.changeShelf}
-                                />
-                            </li>
-                        ))}
+
+                       	{this.state.searchBooks.map(book => {
+
+                       		this.props.books.map(booksinShelves => {
+                       			if (booksinShelves.title === book.title) {
+                       				shelf = booksinShelves.shelf
+								}
+                       		})
+
+                       		return (
+	                            <li key={book.id} tabIndex="0">
+	                                <Book 
+	                                	book={book}
+	                                	shelf={shelf}
+	                                	changeShelf={this.props.changeShelf}
+	                                />
+                            	</li>
+                            )
+                        })}
 		         	</ol>
 		        </div>
 	      	</div>

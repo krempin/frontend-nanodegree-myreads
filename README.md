@@ -42,7 +42,7 @@ Please note that the search will actually work only with these queries:
 - [x] Search input takes queries. Each time a new letter is added, search will be performed on the fly
 - [x] The search works correctly when there is no book cover (test: "biography")
 - [x] Search shows no results if the text from the input field will be completely deleted
-- [ ] Books have got the same shelf on the search as on the main page
+- [x] Books have got the same shelf on the search as on the main page
 - [x] Search will grab results from the API
 - [x] Switching from search to main page, all new added books should be visible at the shelf
 - [x] Books can be added to a shelf
