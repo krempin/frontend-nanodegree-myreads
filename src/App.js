@@ -20,12 +20,14 @@ class BooksApp extends React.Component {
     })
   }
 
-  /* First uodate, then load again to update shelves on the fly */
-  changeShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf);
-    BooksAPI.getAll().then((books) => {
-    	this.setState({books})
-   	})
+  /* Load API only once. This function was provided by the udacity code reviewer */
+  changeShelf= (book, shelf) => {
+    book.shelf = shelf
+    BooksAPI.update(book, shelf).then(() => {
+     this.setState(state => ({ books: this.state.books
+      .filter(b => b.id !== book.id)
+      .concat(book)}))
+    })
   }
 
   render() {
