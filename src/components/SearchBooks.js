@@ -8,23 +8,18 @@ class SearchBooks extends Component {
 	/* Save the search query as the component`s state */
   	state = {
     	query: '',
-    	searchBooks : []
+    	searchBooks: []
 	}
 
 	/* Pass changes from the input field to the state */
 	updateQuery = (query) => {
 		this.setState({ query: query })
-	}
-  
-  	render() {
-
-  		/* Defines the shelf for all books not in shelves yet. Default value is 'none' */
-  		let shelf = 'none';
 
          /* Search function: Get books from API, then set the state for render the books
          	if the books can not be rendered as a search query does not get results,
          	clean up the state  */
-        if (this.state.query) {
+         
+        if (this.state.query !== '') {
 	   		BooksAPI.search(this.state.query).then((searchBooks) => {
 	   			if (searchBooks.error) {
 	      			this.setState({searchBooks:[]})
@@ -32,7 +27,16 @@ class SearchBooks extends Component {
 	      			this.setState({searchBooks})
 	      		}
 	    	}) 
+	    } else {
+	    	this.setState({searchBooks:[]})
         }
+        
+	}
+  
+  	render() {
+
+  		/* Defines the shelf for all books not in shelves yet. Default value is 'none' */
+  		let shelf = 'none';
 
 	    return (
 	      	<div className="search-books">
